@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+    ports:
+    - "5433:5433"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: QIndex
+  web:
+    build: .
+    command: node .
+    image: loneroot/qindex
+    ports:
+    - "3000:3000"
+    - "80:3000"
+    - "8080:3000"
+    volumes:
+    - .:/app
+    depends_on:
+    - db
+    environment:
+      DATABASE_URL: postgres://postgres@db
+      NODE_ENV: production
