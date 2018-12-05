@@ -9,7 +9,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: QIndex
   web:
-    build: .
     command: node .
     image: loneroot/qindex
     ports:
