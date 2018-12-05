@@ -15,7 +15,7 @@ services:
     - "3000:3000"
     - "80:3000"
     - "8080:3000"
-    depends_on:
+    links:
     - db
     environment:
       DATABASE_URL: postgres://postgres@db:5432/QIndex
