@@ -9,8 +9,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: QIndex
   web:
-    volumes:
-    - ./
     command: node .
     image: qindex/qindex
     ports:
