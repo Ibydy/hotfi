@@ -9,7 +9,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: QIndex
   web:
-    build: npm install
+    volumes:
+    - ./
     command: node .
     image: qindex/qindex
     ports:
