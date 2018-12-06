@@ -4,6 +4,8 @@ services:
   web:
     command: node .
     image: qindex/qindex
+    volumes:
+    - ./app/assets/qr/:/app/assets/qr
     ports:
     - "3000:3000"
     - "80:3000"
