@@ -1,13 +1,6 @@
 version: '2'
 
 services:
-  db:
-    image: postgres
-    ports:
-    - "5433:5433"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: QIndex
   web:
     command: node .
     image: qindex/qindex
@@ -20,3 +13,11 @@ services:
     environment:
       DATABASE_URL: postgres://postgres@db:5432/QIndex
       NODE_ENV: production
+  db:
+    image: postgres
+    ports:
+    - "5433:5433"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: QIndex
+
