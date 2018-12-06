@@ -5,7 +5,7 @@ services:
     command: node .
     image: qindex/qindex
     volumes:
-    - ./:./
+    - ./:/hotfi
     ports:
     - "3000:3000"
     - "80:3000"
