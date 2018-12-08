@@ -2,24 +2,29 @@ version: '2'
 
 services:
   web:
-    command: node .
+    build: .
     image: qindex/qindex
+    container_name: node_container
     volumes:
     - ./app/assets/qr/:/app/assets/qr
     ports:
     - "3000:3000"
-    - "80:3000"
-    - "8080:3000"
     links:
+    - db
+    depends_on:
     - db
     environment:
       DATABASE_URL: postgres://postgres@db:5432/QIndex
       NODE_ENV: production
   db:
     image: postgres
+    container_name: pg_container
     ports:
     - "5433:5433"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: QIndex
-
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata: {}
