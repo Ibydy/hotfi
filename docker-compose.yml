@@ -6,7 +6,7 @@ services:
     image: qindex/qindex
     container_name: node_container
     volumes:
-    - ./app/assets/qr/:/app/assets/qr
+    - qr:/app/client/assets
     ports:
     - "3000:3000"
     - "80:3000"
@@ -29,4 +29,5 @@ services:
     volumes:
     - pgdata:/var/lib/postgresql/data
 volumes:
-  pgdata: {}
+  pgdata:
+  qr:
