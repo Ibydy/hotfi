@@ -7,7 +7,7 @@ services:
     container_name: node_container
     volumes:
     - qr4:/app/client/assets/qr
-    - basketball:/app/client/assets/images/basketball
+    - basketball1:/app/client/assets/images/basketball
     ports:
     - "3000:3000"
     - "80:3000"
@@ -32,4 +32,4 @@ services:
 volumes:
   pgdata:
   qr4:
-  basketball:
+  basketball1:
